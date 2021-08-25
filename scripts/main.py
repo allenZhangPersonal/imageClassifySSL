@@ -1,8 +1,13 @@
 import globals 
 import train_model
+import os
+
+def createDirectories():
+	
 
 if __name__ == "__main__": 
 	globals.initialize()
+	createDirectories()
 	trainloader, valloader = train_model.loadData(globals.root, "pretext_train")
 	# Change to True if you have a pretrained weight file to continue training 
 	train_model.initiate_train(trainloader, False, "pretext") 

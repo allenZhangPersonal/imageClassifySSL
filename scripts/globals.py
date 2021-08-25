@@ -15,8 +15,16 @@ def initialize():
 	global device
 	global folder_name
 	global log_file_path
+	githubRoot = Path(os.getcwd()).parent.absolute()
 	root = os.path.join(Path(os.getcwd()).parent.absolute(),'dataset') # Directory with labeled, unlabeled and validation sets
+	if not os.path.isdir(root):
+		os.mkdir(root)
+		os.mkdir(os.path.join(root, 'labeled'))
+		os.mkdir(os.path.join(root, 'unlabeled'))
+		os.mkdir(os.path.join(root, 'validation'))
 	weights = os.path.join(Path(os.getcwd()).parent.absolute(),'weights') # Directory with weights
+	if not os.path.isdir(weights):
+		os.mkdir(weights)
 	# Placeholder for split and filename of labels for that split
 	split = "labeled"
 	label_filename = "labeled_label_tensor.pt"
@@ -32,6 +40,8 @@ def initialize():
 	today = date.today() # Today's date
 	folder_name = today.strftime("%Y_%m_%d") # YYYY_MM_DD
 	log_file_path = os.path.join(Path(os.getcwd()).parent.absolute(),'logs')
+	if not os.path.isdir(logs):
+		os.mkdir(logs)
 	log_file_path = os.path.join(log_file_path, "{}.txt".format(folder_name))
 def setFileName():
 	global pretrain_weight
