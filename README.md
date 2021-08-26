@@ -3,7 +3,7 @@
 conda env create -f environment.yml <br/>
 conda activate myenv <br/>
 
-## Please note that this code only acts as a starter for image classification on easy tasks, if you require a more intricate task, please utilize parts of the code for your own customization purposes <br/>
+## Please note that this code only acts as a starting point for image classification on easy tasks, if you require a more intricate task, please utilize parts of the code for your own customization purposes <br/>
 
 To utilize the code, run: [main.py](https://github.com/allenZhangPersonal/imageClassifySSL/blob/main/scripts/main.py). <br/>
 Most customizations can be changed within [globals.py](https://github.com/allenZhangPersonal/imageClassifySSL/blob/main/scripts/globals.py) where global variables are defined. <br/>
